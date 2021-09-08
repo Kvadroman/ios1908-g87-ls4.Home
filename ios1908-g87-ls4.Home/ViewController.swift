@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         name2(name: "Anton")
         patronymic(patronymic: "Sergeevich")
         nameSerName(nameSN: "AntonIvchenko")
+        mirror(mirrors: "Шопок")
     }
+    
     //    Задача №1 1 способ
     func name (name: String) {
         let a = Array(name)
@@ -37,6 +39,7 @@ class ViewController: UIViewController {
         patronymic.contains("na") ? print("\(patronymic) contains na") : print("\(patronymic) did not contains na")
         
     }
+    
     //        Задача №3
     func nameSerName (nameSN: String) {
         var x = ""
@@ -54,6 +57,18 @@ class ViewController: UIViewController {
         }
     }
     
+    //    Задача №4
+    func mirror (mirrors: String) {
+        var mirror = Array(mirrors)
+        var slovo = [String.Element]()
+        for _ in mirror {
+            if let lastletter = mirror.last   {
+                slovo.append(lastletter)
+            }
+            mirror.removeLast()
+        }
+        print(String(slovo))
+    }
 }
 
 
