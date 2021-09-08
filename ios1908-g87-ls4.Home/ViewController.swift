@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         name(name: "Anton")
+        name2(name: "Anton")
     }
-    
+    //    Задача №1 1 способ
     func name (name: String) {
         let a = Array(name)
         var count = -1
@@ -23,10 +24,11 @@ class ViewController: UIViewController {
         print(count)
     }
     
-    
-    
+    //    Задача №1 2 способ
+    func name2 (name: String) {
+        print(name.count)
+    }
 }
-
 
 
 
