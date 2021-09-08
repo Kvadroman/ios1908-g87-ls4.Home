@@ -13,7 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         name(name: "Anton")
         name2(name: "Anton")
-        patronymic(patronymic: "antonovich")
+        patronymic(patronymic: "Sergeevich")
+        nameSerName(nameSN: "AntonIvchenko")
     }
     //    Задача №1 1 способ
     func name (name: String) {
@@ -30,14 +31,29 @@ class ViewController: UIViewController {
         print(name.count)
     }
     
-//        Задача №2
+    //        Задача №2
     func patronymic (patronymic: String) {
         patronymic.contains("ich") ? print("\(patronymic) contains ich") : print("\(patronymic) did not contains ich")
-        patronymic.contains("evna") ? print("\(patronymic) contains evna") : print("\(patronymic) did not contains evna")
+        patronymic.contains("na") ? print("\(patronymic) contains na") : print("\(patronymic) did not contains na")
+        
+    }
+    //        Задача №3
+    func nameSerName (nameSN: String) {
+        var x = ""
+        for i in nameSN.reversed() {
+            if i.isUppercase {
+                x = "\(i)"
+                break
+            }
+        }
+        let y = nameSN.split(separator: Character(x))
+        if let firstName = y.first,
+           let secondName = y.last {
+            print("First name is: \(firstName)")
+            print("Last Name is: \(x + secondName)")
+        }
     }
     
-    
-      
 }
 
 
