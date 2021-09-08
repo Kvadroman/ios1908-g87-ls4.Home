@@ -8,12 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        name(name: "Anton")
     }
-
-
+    
+    func name (name: String) {
+        let a = Array(name)
+        var count = -1
+        for _ in a.startIndex...a.endIndex{
+            count += 1
+        }
+        print(count)
+    }
+    
+    
+    
 }
+
+
+
 
