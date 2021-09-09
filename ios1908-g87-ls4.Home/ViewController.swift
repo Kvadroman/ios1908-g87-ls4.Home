@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         nameSerName(nameSN: "AntonIvchenko")
         mirror(mirrors: "Топор")
         comma(numbers: "1234567890")
-        
-        
+        privatePass(pass: "№cdnRt5")
+          
     }
     
     //    Задача №1 1 способ
@@ -101,8 +101,50 @@ class ViewController: UIViewController {
             reverse()
         }
     }
+    
+    //           Задача № 6
+    func privatePass (pass: String) {
+        let massiv = Array(pass)
+        var a = false
+        var b = false
+        var c = false
+        var d = false
+        for i in massiv {
+            if i.isNumber {
+                a = true
+            }
+            if i.isSymbol {
+                b = true
+            }
+            if i.isUppercase {
+                c = true
+            }
+            if i.isLowercase {
+                d = true
+            }
+        }
+        if (a && b && c && d) == true {
+            print("The Password is excellent: 4")
+        }
+        else if (a || b || c || d) {
+            var count = 0
+            if a {
+                count += 1
+            }
+            if b {
+                count += 1
+            }
+            if c {
+                count += 1
+            }
+            if d {
+                count += 1
+            }
+            print(count)
+        }
+        else {
+            print("Bad Password")
+        }
+    }
+    
 }
-
-
-
-
