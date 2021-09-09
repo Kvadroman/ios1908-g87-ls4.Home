@@ -15,7 +15,10 @@ class ViewController: UIViewController {
         name2(name: "Anton")
         patronymic(patronymic: "Sergeevich")
         nameSerName(nameSN: "AntonIvchenko")
-        mirror(mirrors: "Шопок")
+        mirror(mirrors: "Топор")
+        comma(numbers: "1234567890")
+        
+        
     }
     
     //    Задача №1 1 способ
@@ -68,6 +71,35 @@ class ViewController: UIViewController {
             mirror.removeLast()
         }
         print(String(slovo))
+    }
+    
+    //        Задача №5
+    func comma (numbers: String) {
+        var chisla = Array(numbers)
+        var pustoy = [String.Element]()
+        func reverse () {
+            pustoy.reverse()
+            print(String(pustoy))
+        }
+        for _ in chisla {
+            if let chisla2 = chisla.last {
+                pustoy.append(chisla2)
+            }
+            chisla.removeLast()
+        }
+        if pustoy.count >= 4 {
+            pustoy.insert(",", at: 3)
+            if pustoy.count >= 8 {
+                pustoy.insert(",", at: 7)
+                if pustoy.count >= 12 {
+                    pustoy.insert(",", at: 11)
+                }
+            }
+            reverse()
+        }
+        if pustoy.count <= 3 {
+            reverse()
+        }
     }
 }
 
