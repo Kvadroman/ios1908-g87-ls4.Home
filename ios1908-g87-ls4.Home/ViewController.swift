@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         mirror(mirrors: "Топор")
         comma(numbers: "1234567890")
         privatePass(pass: "№cdnRt5")
-          
+        sortirovka(massiv: [9, 1, 2, 5, 1, 7, 7])
+        
     }
     
     //    Задача №1 1 способ
@@ -147,4 +148,22 @@ class ViewController: UIViewController {
         }
     }
     
+    //    Задача № 7
+    func sortirovka (massiv: [Int] ) {
+        
+        var sortedArray = Array(massiv)
+        let allSorted = Set(Array(sortedArray))
+        sortedArray = Array(Set(allSorted))
+        let sortedAboveIndex = sortedArray.count
+        for i in 0 ..< sortedAboveIndex-1 {
+            print(sortedAboveIndex)
+            for j in 0 ..< sortedAboveIndex-i-1 {
+                print(sortedAboveIndex)
+                if (sortedArray[j] > sortedArray[j+1]) {
+                    sortedArray.swapAt(j, j+1)
+                }
+            }
+        }
+        print(sortedArray)
+    }
 }
