@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         comma(numbers: "1234567890")
         privatePass(pass: "№cdnRt5")
         sortirovka(massiv: [9, 1, 2, 5, 1, 7, 7])
+        convertStrToTranslite(string: "морДа")
         
     }
     
@@ -150,15 +151,12 @@ class ViewController: UIViewController {
     
     //    Задача № 7
     func sortirovka (massiv: [Int] ) {
-        
         var sortedArray = Array(massiv)
         let allSorted = Set(Array(sortedArray))
         sortedArray = Array(Set(allSorted))
         let sortedAboveIndex = sortedArray.count
         for i in 0 ..< sortedAboveIndex-1 {
-            print(sortedAboveIndex)
             for j in 0 ..< sortedAboveIndex-i-1 {
-                print(sortedAboveIndex)
                 if (sortedArray[j] > sortedArray[j+1]) {
                     sortedArray.swapAt(j, j+1)
                 }
@@ -166,4 +164,21 @@ class ViewController: UIViewController {
         }
         print(sortedArray)
     }
+    
+    //    Задача №8
+    func convertStrToTranslite (string: String) {
+        let newString = Array(string)
+        var newSlovo = [String.Element]()
+        let dictionary: [String: String] = ["щ": "shh", "ш": "sh", "ч": "ch", "ц": "cz", "ю": "yu", "я": "ya", "ё": "yo", "ж": "zh", "ъ": "``", "ы": "y'", "э": "e", "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "з": "z", "и": "i", "й": "j", "к": "k", "л": "l", "м": "m", "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u", "ф": "f", "х": "x", "ь": "`", "Щ": "SHH", "Ш": "SH", "Ч": "CH", "Ц": "CZ", "Ю": "YU", "Я": "YA", "Ё": "YO", "Ж": "ZH", "Ъ": "``", "Ы": "Y'", "Э": "E", "А": "A", "Б": "B", "В": "V", "Г": "G", "Д": "D", "Е": "E", "З": "Z", "И": "I", "Й": "J", "К": "K", "Л": "L", "М": "M", "Н": "N", "О": "O", "П": "P", "Р": "R", "С": "S", "Т": "T", "У": "U", "Ф": "F", "Х": "X", "Ь": "`"]
+        for i in newString {
+            newSlovo.append(contentsOf: dictionary[String(i)] ?? "")
+        }
+        print(String(newSlovo))
+    }
 }
+
+
+
+
+
+
