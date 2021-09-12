@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         sortirovka(massiv: [9, 1, 2, 5, 1, 7, 7])
         convertStrToTranslite(string: "морДа")
         wordDa()
+        antimat(slovo: "hello my fuck, fak my all")
     }
     
     //    Задача №1 1 способ
@@ -187,7 +188,16 @@ class ViewController: UIViewController {
         print(newMassiv)
         
     }
+    //    Задача №10
+    func antimat (slovo: String) {
+        var massiv = slovo.components(separatedBy: [" ", ","])
+        let dictionary = ["fuck": "****", "fak": "***"]
+        for i in dictionary.keys {
+            if let j = massiv.firstIndex(of: i) {
+                massiv[j] = dictionary[i]!
+            }
+        }
+        print(massiv.joined(separator: " "))
+    }
 }
-
-
 
