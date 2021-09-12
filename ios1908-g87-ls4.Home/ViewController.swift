@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         privatePass(pass: "№cdnRt5")
         sortirovka(massiv: [9, 1, 2, 5, 1, 7, 7])
         convertStrToTranslite(string: "морДа")
-        
+        wordDa()
     }
     
     //    Задача №1 1 способ
@@ -175,10 +175,19 @@ class ViewController: UIViewController {
         }
         print(String(newSlovo))
     }
+    //    Задача №9
+    func wordDa () {
+        let massiv = ["lada", "sedan", "baklazhan"]
+        var newMassiv = [String]()
+        for i in massiv {
+            if i.contains("da") {
+                newMassiv.append(i)
+            }
+        }
+        print(newMassiv)
+        
+    }
 }
-
-
-
 
 
 
